@@ -2,8 +2,7 @@ use std::{
     any::{Any, TypeId},
     collections::HashMap,
 };
-
-use crate::system::StoredSystem;
+use crate::system::stored_system::StoredSystem;
 
 struct Scheduler {
     systems: Vec<StoredSystem>,
