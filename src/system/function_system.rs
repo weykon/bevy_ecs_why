@@ -9,5 +9,5 @@ pub struct FunctionSystem<Input, F> {
     // Also, this way Input is covariant, but that's not super relevant since we can only deal with
     // static parameters here anyway so there's no subtyping. More info here:
     // https://doc.rust-lang.org/nomicon/subtyping.html
-    marker: PhantomData<fn() -> Input>,
+    pub(crate) marker: PhantomData<fn() -> Input>,
 }
