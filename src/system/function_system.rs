@@ -11,3 +11,14 @@ pub struct FunctionSystem<Input, F> {
     // https://doc.rust-lang.org/nomicon/subtyping.html
     pub(crate) marker: PhantomData<fn() -> Input>,
 }
+
+
+// 这里的phantomdata，是为了可以存储关于这个类型的信息，
+// 而不实际存储这个类型里面的值的。
+// 1.标记类型
+// 2.所有权和生命周期，帮助编译器理解这个类型的所有权和生命周期关系信息。
+
+// 为什么是 fn() -> Input 呢
+// 标记 Input 类型，使编译器知道 FunctionSystem 与 Input 类型相关联。
+// 确保 FunctionSystem 结构体是 Send 和 Sync 的，因为函数指针类型总是 Send 和 Sync 的。
+// 确保 Input 类型是协变的，避免类型系统中的问题。

@@ -4,9 +4,9 @@ use std::{
     collections::HashMap,
 };
 
-struct Scheduler {
-    systems: Vec<StoredSystem>,
-    resources: HashMap<TypeId, Box<dyn Any>>,
+pub struct Scheduler {
+    pub systems: Vec<StoredSystem>,
+    pub resources: HashMap<TypeId, Box<dyn Any>>,
 }
 
 impl Scheduler {
