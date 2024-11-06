@@ -22,3 +22,8 @@ pub struct FunctionSystem<Input, F> {
 // 标记 Input 类型，使编译器知道 FunctionSystem 与 Input 类型相关联。
 // 确保 FunctionSystem 结构体是 Send 和 Sync 的，因为函数指针类型总是 Send 和 Sync 的。
 // 确保 Input 类型是协变的，避免类型系统中的问题。
+
+// 似乎也有可以直接翻译的可能，
+// 是一个fn()->Input的幽灵数据的意思
+// 保留了对于零成本和隐含的Send/Sync trait的impl需求下
+// 在编译器理解语义下完成工作。
